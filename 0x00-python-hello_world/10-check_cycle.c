@@ -8,7 +8,7 @@ listint_t *copy1, *copy2;
 		return (0);
 	if (list == (*list).next)
 		return (1);
-	while (copy1 != NULL)
+	while (copy1 != NULL && (*copy1).next)
 	{
 		copy1 = (*copy1).next;
 		copy2 = list;
@@ -16,7 +16,7 @@ listint_t *copy1, *copy2;
 		{
 			if (copy2 == NULL)
 				return (0);
-			if (copy2 == (*copy1).next)
+ 			if (copy2 == (*copy1).next)
 				return (1);
 			copy2 = (*copy2).next;
 		}
