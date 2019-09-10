@@ -8,6 +8,7 @@ if number < 0:
 n = number % 10
 if flag:
     number = number * -1
+    n = n * -1
 if n > 5:
     print('Last digit of', number, 'is', n, 'and is greater than 5')
 elif n == 0:
