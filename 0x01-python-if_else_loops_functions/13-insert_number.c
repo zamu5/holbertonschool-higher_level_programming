@@ -8,12 +8,21 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *c1, *c2, *new;
+	struct listint_s *temp = NULL;
 
 	if (!head || number <= 0)
 		return (NULL);
 	c1 = *head;
 	if (c1 == NULL)
-		add_nodeint_end(&c1, number);
+	{
+		temp = (struct listint_s *)malloc(sizeof(struct listint_s));
+		if (temp == NULL)
+			return (NULL);
+		temp->n = number;
+		temp->next = *head;
+		*head = temp;
+		return (temp);
+	}
 	while (c1)
 	{
 		c2 = (*c1).next;
