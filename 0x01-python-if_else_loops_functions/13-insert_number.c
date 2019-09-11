@@ -10,7 +10,7 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *c1, *c2, *new;
 	struct listint_s *temp = NULL;
 
-	if (!head || number <= 0)
+	if (!head || number < 0)
 		return (NULL);
 	c1 = *head;
 	if (c1 == NULL)
