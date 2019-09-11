@@ -26,7 +26,18 @@ listint_t *insert_node(listint_t **head, int number)
 	while (c1)
 	{
 		c2 = (*c1).next;
-		if (c2 && number < (*c2).n)
+		if (number < (*c1).n)
+		{
+			new = malloc(sizeof(listint_t));
+			if (!new)
+				return (NULL);
+			(*new).n = number;
+			(*new).next = c1;
+			*head = new;
+			return (new);
+
+		}
+		else if (c2 && number < (*c2).n)
 		{
 			new = malloc(sizeof(listint_t));
 			if (!new)
