@@ -10,7 +10,7 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *c1, *c2, *new;
 	struct listint_s *temp = NULL;
 
-	if (!head || number < 0)
+	if (!head)
 		return (NULL);
 	c1 = *head;
 	if (c1 == NULL)
@@ -18,9 +18,7 @@ listint_t *insert_node(listint_t **head, int number)
 		temp = (struct listint_s *)malloc(sizeof(struct listint_s));
 		if (temp == NULL)
 			return (NULL);
-		temp->n = number;
-		temp->next = *head;
-		*head = temp;
+		temp->n = number, temp->next = *head, *head = temp;
 		return (temp);
 	}
 	while (c1)
@@ -31,9 +29,7 @@ listint_t *insert_node(listint_t **head, int number)
 			new = malloc(sizeof(listint_t));
 			if (!new)
 				return (NULL);
-			(*new).n = number;
-			(*new).next = c1;
-			*head = new;
+			(*new).n = number, (*new).next = c1, *head = new;
 			return (new);
 
 		}
