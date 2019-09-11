@@ -38,5 +38,6 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		c1 = (*c1).next;
 	}
+	new = add_nodeint_end(head, number);
 	return (NULL);
 }
