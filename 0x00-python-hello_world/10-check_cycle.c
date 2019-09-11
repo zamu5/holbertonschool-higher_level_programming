@@ -1,25 +1,30 @@
 #include "lists.h"
 int check_cycle(listint_t *list)
 {
-listint_t *copy1, *copy2;
+	listint_t *slow = list;
+	listint_t *fast = list;
 
 	if (list == NULL)
 		return (0);
-	if (list == (*list).next)
-		return (1);
-	copy1 = list;
-	while (copy1 != NULL && (*copy1).next)
+	while (slow && fast && fast->next)
 	{
-		copy1 = (*copy1).next;
-		copy2 = list;
-		while (copy1 && copy2 != copy1 && (*copy2).next)
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
 		{
-			if (copy2 == NULL)
-				return (0);
- 			if (copy2 == (*copy1).next)
-				return (1);
-			copy2 = (*copy2).next;
+			while (1)
+			{
+				slow = fast;
+				while (fast->next != slow && fast->next != list)
+					fast = fast->next;
+				if (fast->next == list)
+					break;
+				list = list->next;
+			}
+			return (1);
 		}
+
 	}
 	return (0);
+
 }
