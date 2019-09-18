@@ -10,10 +10,10 @@ int is_palindrome(listint_t **head)
 	listint_t *copy= NULL;
 	int i = 0, cont = 0;
 
-	if (*head == NULL)
-		return (1);
 	if (head == NULL)
 		return (0);
+	if (*head == NULL)
+		return (1);
 	copy = *head;
 	while(copy != NULL)
 	{
@@ -21,7 +21,7 @@ int is_palindrome(listint_t **head)
 		copy = (*copy).next;
 		cont++;
 	}
-	for(i = 0; i != cont; i++, cont--)
+	for(i = 0; i < cont; i++, cont--)
 	{
 		if (vect[i] != vect[cont - 1])
 			return (0);
