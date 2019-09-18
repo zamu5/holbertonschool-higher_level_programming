@@ -6,12 +6,12 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int vect[9999];
+	int vect[2147483646];
 	listint_t *copy;
 	int i = 0, cont = 0;
 
-	if (head == NULL)
-		return (0);
+	if (*head == NULL)
+		return (1);
 	copy = *head;
 	while(copy != NULL)
 	{
