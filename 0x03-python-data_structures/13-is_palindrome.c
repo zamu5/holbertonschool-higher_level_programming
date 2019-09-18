@@ -6,7 +6,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int vect[2147483646];
+	int vect[9999];
 	listint_t *copy;
 	int i = 0, cont = 0;
 
