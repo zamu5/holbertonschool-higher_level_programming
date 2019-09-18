@@ -6,28 +6,16 @@
  */
 int is_palindrome(listint_t **head)
 {
+	char vect[1000];
 	listint_t *copy;
-	int cont = 0;
-
-	if (head == NULL)
-		return (1);
-	copy = *head;
-	while (copy != NULL)
-		cont++, copy = (*copy).next;
-	return(verify(head, cont));
-}
-int verify(listint_t **head, int cont)
-{
-	char vect[cont];
-	listint_t *copy;
-	int i = 0;
+	int i = 0, cont = 0;
 
 	copy = *head;
 	while(copy != NULL)
 	{
-		vect[i] = (*copy).n;
+		vect[cont] = (*copy).n;
 		copy = (*copy).next;
-		i++;
+		cont++;
 	}
 	for(i = 0; i != cont; i++, cont--)
 	{
