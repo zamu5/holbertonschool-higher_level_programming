@@ -10,6 +10,8 @@ int is_palindrome(listint_t **head)
 	listint_t *copy;
 	int i = 0, cont = 0;
 
+	if (head == NULL)
+		return (1);
 	copy = *head;
 	while(copy != NULL)
 	{
