@@ -6,30 +6,34 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *copy, *st, *ts;
-	int cont = 0, i = 0, pal, j = 0;
+	listint_t *copy;
+	int cont = 0;
 
 	if (head == NULL)
 		return (1);
 	copy = *head;
 	while (copy != NULL)
 		cont++, copy = (*copy).next;
-	st = *head;
-	pal = cont - 1;
-	while (i < cont / 2)
+	return(verify(head, cont));
+}
+int verify(listint_t **head, int cont)
+{
+	char vect[cont];
+	listint_t *copy;
+	int i = 0;
+
+	copy = *head;
+	while(copy != NULL)
 	{
-		ts = st;
-		while (j != pal)
-		{
-			ts = (*ts).next;
-			j++;
-		}
-		if ((*ts).n != (*st).n)
-			return (0);
-		st = (*st).next;
-		pal = pal - 2;
-		j = 0;
+		vect[i] = (*copy).n;
+		copy = (*copy).next;
 		i++;
 	}
+	for(i = 0; i != cont; i++, cont--)
+	{
+		if (vect[i] != vect[cont - 1])
+			return (0);
+	}
 	return (1);
+
 }
