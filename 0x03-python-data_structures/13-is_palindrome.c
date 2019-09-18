@@ -6,8 +6,8 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int vect[999999];
-	listint_t *copy;
+	int vect[100000];
+	listint_t *copy= NULL;
 	int i = 0, cont = 0;
 
 	if (*head == NULL)
