@@ -2,4 +2,4 @@
 def number_keys(a_dictionary):
     for i in range(len(a_dictionary)):
         pass
-    return i
+    return i + 1
