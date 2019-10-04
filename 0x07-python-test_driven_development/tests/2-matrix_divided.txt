@@ -1,0 +1,48 @@
+===============================
+ Task 2-matrix_divided
+===============================
+
+This is the test of the function
+``matriz_divided()``.
+
+===============================
+
+``matrix_divided()`` returns the addition of two integers.
+
+Numbers
+=======
+
+::
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [[9, 6, 3], [10, 27, 1]]
+	>>> matrix_divided(matrix, 3)
+	[[3.0, 2.0, 1.0], [3.33, 9.0, 0.33]]
+
+::
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+::
+
+	>>> matrix_divided(matrix)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+::
+	>>> matrix = [[9, 6, 3], [10, 27]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+::
+	>>> matrix = [[33.33, 4.55, 9.99], ["String", 666, 123]]
+	>>> matrix_divided(matrix, 8.52)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+	>>> matrix = []
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats

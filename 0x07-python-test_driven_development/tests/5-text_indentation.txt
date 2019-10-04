@@ -1,0 +1,38 @@
+===============================
+ Task 5-text_indentation
+===============================
+
+This is the test of the function
+``text_indentation()``.
+
+===============================
+
+``text_indentation()`` indent a string using . and ? delimitators.
+
+Indent
+=======
+
+::
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("hola. como estas?")
+	hola.
+	
+	como estas?
+	
+
+
+::
+	>>> text_indentation("hola. como estas")
+	hola.
+	
+	como estas
+
+::
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+::
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
