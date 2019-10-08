@@ -5,8 +5,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         type(self).number_of_instances += 1
 
     @property
@@ -43,6 +43,8 @@ class Rectangle:
 
     def __str__(self):
         result = ""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
         for i in range(self.__height - 1):
             result = result + str(self.print_symbol) * self.__width + "\n"
         return result + str(self.print_symbol) * self.__width
