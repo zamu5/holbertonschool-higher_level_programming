@@ -42,7 +42,7 @@ class Rectangle:
             return ("")
         for i in range(self.__height - 1):
             result = result + "#" * self.__width + "\n"
-        res = result + "#" * self.__width
+        result = result + "#" * self.__width
         return result
 
     def __repr__(self):
