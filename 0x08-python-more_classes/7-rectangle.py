@@ -3,6 +3,7 @@ class Rectangle:
 
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
@@ -45,7 +46,6 @@ class Rectangle:
         for i in range(self.__height - 1):
             result = result + str(self.print_symbol) * self.__width + "\n"
         return result + str(self.print_symbol) * self.__width
-
 
     def __repr__(self):
         ret = "Rectangle" + "(" + str(self.__width)
