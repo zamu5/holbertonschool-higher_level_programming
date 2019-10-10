@@ -28,18 +28,22 @@ def matrix_mul(m_a, m_b):
         raise TypeError("each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    result = []
-    element = 0
-    flag = 1
-    for i in range(len(m_a)):
-        ll = []
-        for j in range(len(m_b[i])):
-            for k in range(len(m_b)):
-                sum = m_a[i][k] * m_b[k][j]
-                element += sum
-                if k == len(m_b) - 1:
-                    ll.append(element)
-                    element = 0
-            if j == len(m_b[i]) - 1:
-                result.append(ll)
-    return result
+    r1 = []
+    i1 = 0
+
+    for a in m_a:
+        r2 = []
+        i2 = 0
+        num = 0
+        while (i2 < len(m_b[0])):
+            num += a[i1] * m_b[i1][i2]
+            if i1 == len(m_b) - 1:
+                i1 = 0
+                i2 += 1
+                r2.append(num)
+                num = 0
+            else:
+                i1 += 1
+        r1.append(r2)
+
+    return r1
