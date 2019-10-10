@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""
+Module have function that multiplies 2 matrices
+"""
 def matrix_mul(m_a, m_b):
+    """ Function that multiplies 2 matrices"""
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
