@@ -13,3 +13,4 @@ def text_indentation(text):
         else:
             if i is not " ":
                 flag = 0
+            
