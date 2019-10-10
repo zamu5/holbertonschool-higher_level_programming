@@ -11,6 +11,5 @@ def text_indentation(text):
             else:
                 print("{}".format(i), end="")
         else:
-            if i is not " ":
+            if i is " ":
                 flag = 0
-            
