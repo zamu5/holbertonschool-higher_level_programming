@@ -82,4 +82,4 @@ Multiplication
 ::
 	>>> lazy_matrix_mul([2, 5], (5, 8))
 	Traceback (most recent call last):
-	TypeError: m_b must be a listt
+	TypeError: m_b must be a list
