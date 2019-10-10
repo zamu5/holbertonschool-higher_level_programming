@@ -15,7 +15,7 @@ Names
 ::
 	>>> say_my_name = __import__('3-say_my_name').say_my_name
 	>>> say_my_name("James", "Bond")
-	James Bond
+	My name is James Bond
 
 ::
 	>>> say_my_name("James", Bond)
@@ -29,7 +29,7 @@ Names
 
 ::
 	>>> say_my_name("James")
-	James 
+	My name is James 
 
 ::
 	>>> say_my_name("James", "Bond", "Gomez")
