@@ -53,35 +53,27 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(-2, 2)
         with self.assertRaises(ValueError):
             r = Rectangle(2, -2)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(0.5, 2)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 0.5)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, "error", 2)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, 2, "error")
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, (1, 2), 2)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, 2, (1, 2))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, [1, 2], 2)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, 2, [1, 2])
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, {"a": 1}, 2)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             r = Rectangle(2, 2, 2, {"a": 1})
-        with self.assertRaises(ValueError):
-            r = Rectangle(2, 2, 2, 2, "error")
-        with self.assertRaises(ValueError):
-            r = Rectangle(2, 2, 2, 2, (1, 2))
-        with self.assertRaises(ValueError):
-            r = Rectangle(2, 2, 2, 2, [1, 2])
-        with self.assertRaises(ValueError):
-            r = Rectangle(2, 2, 2, 2, {"a": 1})
-
+        
     def testarea(self):
         rec = Rectangle(5, 5)
         self.assertEqual(rec.area(), 25)
@@ -111,5 +103,5 @@ class TestRectangle(unittest.TestCase):
     def testupdate(self):
         rec = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(rec), "[Rectangle] (5) 3/4 - 1/2")
-        rec.update(5, 4, 3, 2, 1)
+        rec.update(1, 5, 4, 3, 2)
         self.assertEqual(str(rec), "[Rectangle] (1) 3/2 - 5/4")
