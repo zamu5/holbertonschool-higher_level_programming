@@ -2,6 +2,7 @@
 """This module hace the class square"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """class square"""
     def __init__(self, size, x=0, y=0, id=None):
@@ -31,7 +32,7 @@ class Square(Rectangle):
                     setattr(self, 'width', args[i])
                     setattr(self, 'height', args[i])
         else:
-            for key, value  in kwargs.items():
+            for key, value in kwargs.items():
                 if key == "size":
                     setattr(self, 'width', value)
                     setattr(self, 'height', value)
