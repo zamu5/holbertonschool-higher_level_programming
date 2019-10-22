@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """this module have the base class"""
+
 import json
 import os
 
 
 class Base:
     """Base"""
+
     __nb_objects = 0
 
     def __init__(self, id=None):
