@@ -42,9 +42,9 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(2, [1, 2])
         with self.assertRaises(TypeError):
-            r = Rectangle({"a" : 1}, 2)
+            r = Rectangle({"a": 1}, 2)
         with self.assertRaises(TypeError):
-            r = Rectangle(2, {"a" : 1})
+            r = Rectangle(2, {"a": 1})
         with self.assertRaises(ValueError):
             r = Rectangle(0, 2)
         with self.assertRaises(ValueError):
@@ -73,7 +73,7 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(2, 2, {"a": 1}, 2)
         with self.assertRaises(TypeError):
             r = Rectangle(2, 2, 2, {"a": 1})
-        
+
     def testarea(self):
         rec = Rectangle(5, 5)
         self.assertEqual(rec.area(), 25)
@@ -98,7 +98,6 @@ class TestRectangle(unittest.TestCase):
     def teststri(self):
         rec = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(rec), "[Rectangle] (5) 3/4 - 1/2")
-
 
     def testupdate(self):
         rec = Rectangle(1, 2, 3, 4, 5)
