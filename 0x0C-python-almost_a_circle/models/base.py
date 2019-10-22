@@ -1,17 +1,23 @@
 #!/usr/bin/python3
-"""this module have the base class"""
+"""
+this module have the base class
+"""
 
 import json
 import os
 
 
 class Base:
-    """Base"""
+    """
+    Base
+    """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """init"""
+        """
+        init
+        """
 
         if id is not None:
             self.id = id
@@ -21,7 +27,9 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """to_json_string"""
+        """
+        to_json_string
+        """
 
         if list_dictionaries is None and list_dictionaries == "[]":
             return "[]"
@@ -29,7 +37,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save_to_file"""
+        """
+        save_to_file
+        """
 
         li = []
         fi = "{}.json".format(cls.__name__)
@@ -42,7 +52,9 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """from_json_string"""
+        """
+        from_json_string
+        """
 
         if json_string is None:
             return []
@@ -50,7 +62,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """create"""
+        """
+        create
+        """
 
         if cls.__name__ == "Rectangle":
             create = cls(5, 5)
@@ -61,7 +75,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """load_from_file"""
+        """
+        load_from_file
+        """
 
         fi = "{}.json".format(cls.__name__)
         if os.path.exists(fi) is False:
