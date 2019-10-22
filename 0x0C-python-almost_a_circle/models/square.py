@@ -19,7 +19,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """size function"""
-        return self.width, self.heiht
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -29,7 +29,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """__str__ function"""
-        return "[Rectangle] ({}) {}/{} - {}".format(self.id, self.x,
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                     self.y, self.width)
 
     def update(self, *args, **kwargs):
