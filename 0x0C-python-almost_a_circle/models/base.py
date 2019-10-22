@@ -21,6 +21,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """to_json_string"""
+
         if list_dictionaries is None and list_dictionaries == "[]":
             return "[]"
         return json.dumps(list_dictionaries)
@@ -28,6 +29,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save_to_file"""
+
         li = []
         fi = "{}.json".format(cls.__name__)
         if list_objs is not None:
@@ -40,6 +42,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """from_json_string"""
+
         if json_string is None:
             return []
         return json.loads(json_string)
@@ -47,6 +50,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create"""
+
         if cls.__name__ == "Rectangle":
             create = cls(5, 5)
         elif cls.__name__ == "Square":
@@ -57,6 +61,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """load_from_file"""
+
         fi = "{}.json".format(cls.__name__)
         if os.path.exists(fi) is False:
             return []
