@@ -12,6 +12,7 @@ class Base:
 
     def __init__(self, id=None):
         """init"""
+
         if id is not None:
             self.id = id
         else:
