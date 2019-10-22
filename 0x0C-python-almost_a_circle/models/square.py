@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""This module hace the class square"""
+"""
+This module hace the class square
+"""
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """class square"""
+    """
+    class square
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         self.size = size
