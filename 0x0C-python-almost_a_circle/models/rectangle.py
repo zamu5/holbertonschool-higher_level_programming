@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-"""Module taht contains the class Rectangule"""
+"""
+Module taht contains the class Rectangule
+"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class Rectangle"""
+    """
+    Class Rectangle
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """init"""
