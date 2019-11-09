@@ -44,7 +44,7 @@ class Square:
     def __str__(self):
         st = ""
         if self.__size == 0:
-            return string
+            return st
         else:
             st = ("\n" * self.__position[1])
             for row in range(self.__size - 1):
