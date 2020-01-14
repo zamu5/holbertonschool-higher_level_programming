@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# look for commits
+"""
+"""
 import sys
 import requests
 
