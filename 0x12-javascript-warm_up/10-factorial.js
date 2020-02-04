@@ -1,6 +1,10 @@
 #!/usr/bin/node
-let fac = 1; let i;
-for (i = 1; i <= parseInt(process.argv[2]); i++) {
-  fac = fac * i;
+const fac = fact(parseInt(process.argv[2]));
+function fact (number) {
+  let i; let res = 1;
+  for (i = 1; i <= number; i++) {
+    res = res * i;
+  }
+  return res;
 }
 console.log(fac);
