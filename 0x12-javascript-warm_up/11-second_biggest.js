@@ -2,7 +2,7 @@
 if (process.argv.length === 2) {
   console.log(0);
 } else {
-  var ar = [];
+  const ar = [];
   let i;
   for (i = 2; process.argv[i]; i++) {
     ar.push(parseInt(process.argv[i]));
