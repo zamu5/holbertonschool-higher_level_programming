@@ -4,7 +4,9 @@ if (process.argv.length === 2 || process.argv.length === 3) {
 } else {
   const ar = []; let i;
   for (i = 2; process.argv[i]; i++) {
-    ar.push(parseInt(process.argv[i]));
+    if (!isNaN(Number(process.argv[i]))) {
+      ar.push(parseInt(process.argv[i]));
+    }
   }
   i = 0;
   ar.sort().reverse();
