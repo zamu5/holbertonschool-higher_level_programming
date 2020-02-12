@@ -5,7 +5,7 @@ request(process.argv[2], function (err, _response, body) {
     let count = 0;
     JSON.parse(body).results.forEach(element => {
       element.characters.forEach(data => {
-        if (data === 'https://swapi.co/api/people/18/') {
+        if (data.search('/18/') > 0) {
           count++;
         }
       });
